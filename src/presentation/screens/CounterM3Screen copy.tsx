@@ -1,7 +1,9 @@
 import { useState } from "react"
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text } from "react-native"
+import { globalStyles } from "../theme/global.style"
+import { FAB } from "react-native-paper"
 //import { PrimaryButton } from "../components/shared/PrimaryButton"
-import { Button } from "react-native-paper"
+
 
 
 export const CounterM3Screens = () => {
@@ -9,33 +11,17 @@ export const CounterM3Screens = () => {
     const [count, setCount] = useState(10)
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>{count}</Text>
+        <View style={globalStyles.centerContainer}>
+            <Text style={globalStyles.title}>{count}</Text>
 
-            {/*<PrimaryButton label='Incrementar'
-                onPress={() => setCount(count + 1)}
-                onLongPress={() => setCount(0)} />*/}
-
-            <Button
+            <FAB
+                icon="plus"
                 onPress={() => setCount(count + 1)}
                 onLongPress={() => setCount(0)}
-                mode="contained"
-            >
-                Incrementar
-            </Button>
+                style={globalStyles.fab}
+            />
+
         </View>
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    title: {
-        fontSize: 80,
-        color: 'black',
-        fontWeight: '300',
-    },
-})
