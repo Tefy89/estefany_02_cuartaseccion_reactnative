@@ -1,45 +1,21 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { SafeAreaView } from 'react-native';
+//import { CounterScreens } from './src/presentation/screens/CounterScreens';
+import { PaperProvider } from 'react-native-paper';
+import { CounterM3Screens } from './src/presentation/screens/CounterM3Screen copy';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+//import { HelloWorldScreen } from './src/presentation/screens/HelloWorldScreen';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
 
+//usamos el paper provider para que toda la app tenga acceso a los componentes de react native paper
+export const App = () => {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
+    <PaperProvider>
+      {/* safeareaview nos ayuda a que los componentes no se monten en las zonas no seguras de los dispositivos como la hora  o los bordes redondeados */}
+      <SafeAreaView style={{ flex: 1 }}>
+        {/*<HelloWorldScreen name='Estefany Ordoñez' />
+        <CounterScreens />*/}
+        <CounterM3Screens />
+      </SafeAreaView>
+    </PaperProvider>
+  )
 }
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
