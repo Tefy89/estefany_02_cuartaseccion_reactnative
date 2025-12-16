@@ -1,7 +1,10 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 //import { CounterScreens } from './src/presentation/screens/CounterScreens';
 import { PaperProvider } from 'react-native-paper';
-import { PositionScreen } from './src/presentation/screens/PositionScreen';
+import { HomeworkScreen } from './src/presentation/screens/HomeworkScreen';
+//import { FlexDirectionScreen } from './src/presentation/screens/FlexDirectionScreen';
+//import { FlexScreen } from './src/presentation/screens/FlexScreen';
+//import { PositionScreen } from './src/presentation/screens/PositionScreen';
 //import { BoxObjectModelScreen } from './src/presentation/screens/BoxObjectModelScreen';
 //import { DimensionScreen } from './src/presentation/screens/DimensionScreen';
 //import { CounterM3Screens } from './src/presentation/screens/CounterM3Screen copy';
@@ -19,8 +22,11 @@ export const App = () => {
         <CounterScreens />
         <CounterM3Screens />
         <BoxObjectModelScreen />
-        <DimensionScreen />*/}
+        <DimensionScreen />
         <PositionScreen />
+        <FlexScreen />
+        <FlexDirectionScreen />*/}
+        <HomeworkScreen />
       </SafeAreaView>
     </PaperProvider>
   )
